@@ -26,3 +26,21 @@ obwod_k = 2*math.pi*r
 pole_k = math.pi*pow(r,2)
 
 print("Obwód koła wynosi {} a pole {}".format(obwod_k, pole_k))
+ 
+
+
+#Trapez
+
+podstawa_1 = 7
+podstawa_2 = 8
+ramie_1=4
+ramie_2=9
+wysokosc=9
+
+obwod_t =podstawa_1+podstawa_2+ramie_1+ramie_2
+pole_t = ((podstawa_1+podstawa_2)/2)*wysokosc
+
+print("Obwód trapezu wynosi {} a pole {}".format(obwod_t, pole_t))
+
+
+
