@@ -17,3 +17,12 @@ pole_p = b * c
 
 print("Obwód prostokąta wynosi {} a pole {}".format(obwod_p, pole_p))
 
+#Koło
+import math
+r = 10
+
+
+obwod_k = 2*math.pi*r
+pole_k = math.pi*pow(r,2)
+
+print("Obwód koła wynosi {} a pole {}".format(obwod_k, pole_k))
