@@ -43,4 +43,13 @@ pole_t = ((podstawa_1+podstawa_2)/2)*wysokosc
 print("Obwód trapezu wynosi {} a pole {}".format(obwod_t, pole_t))
 
 
+#Romb
+
+bok = 7
+wysokosc = 10
+
+obwod_r = 4*bok
+pole_r = bok * wysokosc
+
+print("Obwód rombu wynosi {} a pole {}".format(obwod_r, pole_r))
 
