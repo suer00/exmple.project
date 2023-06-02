@@ -77,6 +77,11 @@ class Dieta:
         self.aktywnosc_fizyczna = []
         self.ilosc_wypitej_wody=[]
 
+    def __str__(self):
+        return f"Twoja aktualna waga to {self.waga}, przy wzroscie {self.wazrost}"
+
+
+
     def oblicz_BMI(self):
         self.bmi=self.waga/pow(self.wzrost/100,2)
         if self.bmi<=18.5:
