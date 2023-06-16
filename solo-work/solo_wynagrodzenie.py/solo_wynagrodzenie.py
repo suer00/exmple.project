@@ -51,17 +51,23 @@ class Pracownik:
         return koszt
 
 #nie powinien bz w klasie pracownik
-    def oblicz_koszt_calkowity(self, pracownicy):
-        koszt_calkowity = 0
+    def oblicz_koszt_pracodawcy(self):
+        koszt_pracowdawcy = 0
         wynagrodzenie_brutto = float(self.wynagrodzenie_brutto)
-        for pracownik in pracownicy:
-            składka_emerytalna = 0.0976 * wynagrodzenie_brutto
-            składka_rentowa = 0.065 * wynagrodzenie_brutto
-            składka_na_Fundusz_Pracy = 0.0245 * wynagrodzenie_brutto
-            składka_na_Fundusz_Gwarantowanych_Świadczeń_Pracowniczych = 0.001 * wynagrodzenie_brutto
-            koszt = wynagrodzenie_brutto + składka_emerytalna + składka_rentowa + składka_na_Fundusz_Pracy + składka_na_Fundusz_Gwarantowanych_Świadczeń_Pracowniczych
-            koszt_calkowity += koszt
-        return koszt_calkowity
+
+        składka_emerytalna = 0.0976 * wynagrodzenie_brutto
+        składka_rentowa = 0.065 * wynagrodzenie_brutto
+        składka_na_Fundusz_Pracy = 0.0245 * wynagrodzenie_brutto
+        składka_na_Fundusz_Gwarantowanych_Świadczeń_Pracowniczych = 0.001 * wynagrodzenie_brutto
+        koszt = wynagrodzenie_brutto + składka_emerytalna + składka_rentowa + składka_na_Fundusz_Pracy + składka_na_Fundusz_Gwarantowanych_Świadczeń_Pracowniczych
+        koszt_pracowdawcy += koszt
+        return koszt_pracowdawcy
+
+    def oblicz_koszt_całkowity(self, koszt_pracowdawcy):
+        wynagrodzenie_brutto=float(self.wynagrodzenie_brutto)
+        koszt_pracowdawcy = float(koszt_pracowdawcy)
+        koszt_całkowity = wynagrodzenie_brutto + koszt_pracowdawcy
+        return koszt_całkowity
 
     def koszt_calkowity_wszystkich_pracownikow(self, pracownicy):
         koszt_calkowity = 0
@@ -72,7 +78,7 @@ class Pracownik:
             składka_na_Fundusz_Pracy = 0.0245 * wynagrodzenie_brutto
             składka_na_Fundusz_Gwarantowanych_Świadczeń_Pracowniczych = 0.001 * wynagrodzenie_brutto
             koszt = wynagrodzenie_brutto + składka_emerytalna + składka_rentowa + składka_na_Fundusz_Pracy + składka_na_Fundusz_Gwarantowanych_Świadczeń_Pracowniczych
-            koszt_calkowity+=koszt
+            koszt_calkowity += koszt
         return koszt_calkowity
 
 
@@ -97,8 +103,7 @@ for pracownik in pracownicy:
     print(" -pensja brutto: ", ludek.pensja_brutto())
     print(" -pensja netto: ",ludek.oblicz_netto())
     print(" -koszty pracodawcy: ",ludek.oblicz_koszt())
-    #print(" -koszt całkowity: ", ludek.oblicz_koszt_calkowity())
+    print(" -całkowity koszt pracodawcy: ", ludek.oblicz_koszt_całkowity(ludek.oblicz_koszt()))
 print('----------------------------------------------------------------------------------')
-print("Suma kosztów wyników: ", ludek.koszt_calkowity_wszystkich_pracownikow(pracownicy))
+print("Suma kosztów wszystkich pracowników: ", ludek.koszt_calkowity_wszystkich_pracownikow(pracownicy))
 
-        #wsyztskie koszty skłądki jakie ponosi pracodawca
